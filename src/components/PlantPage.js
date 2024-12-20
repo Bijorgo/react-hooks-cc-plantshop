@@ -11,7 +11,7 @@ function PlantPage() {
   const handleSearch = (event) => {
     setSearch(event.target.value.toLowerCase())
   }
-
+  // initial get request retrieves data from API
   useEffect( () => {
     fetch("http://localhost:6001/plants")
     .then( r => r.json())
@@ -19,11 +19,11 @@ function PlantPage() {
       setAllPlants(plantData)
     })
   },[]);
-
+  // create search fucntion that shearches with each character typed in
   const filteredPlants = allPlants.filter(plant => 
     plant.name.toLowerCase().includes(search)
   )
-
+  // main component, pass down state and callback props
   return (
     <main>
       <NewPlantForm allPlants={allPlants} setAllPlants={setAllPlants}/>

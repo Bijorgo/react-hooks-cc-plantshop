@@ -2,12 +2,13 @@ import React from "react";
 import { useState } from "react";
 
 function PlantCard({ plant }) {
+  //state for in stock / out of stock button toggle
   const [ stockButton, setStockButton ] = useState(true)
+  // handle toggle function
   function handleClick() {
     return(
       setStockButton(!stockButton)
     )
-    
   }
 
   return (

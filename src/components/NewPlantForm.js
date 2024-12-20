@@ -4,7 +4,8 @@ function NewPlantForm({ allPlants, setAllPlants}) {
   const [ newName, setNewName ] = useState("")
   const [ newImg, setNewImg ] = useState("")
   const [ newPrice, setNewPrice ] = useState(0)
-
+  //states to retain form data
+  //handlers to track data in form
   function nameChangeHandler(event) {
     setNewName(event.target.value)
   }
@@ -14,7 +15,7 @@ function NewPlantForm({ allPlants, setAllPlants}) {
   function priceChangeHandler(event) {
     setNewPrice(event.target.value)
   }
-
+  // on submit, make a POST request. Add new plant data to API and display on page
   function handleSubmit(event) {
     event.preventDefault();
     fetch("http://localhost:6001/plants",{
